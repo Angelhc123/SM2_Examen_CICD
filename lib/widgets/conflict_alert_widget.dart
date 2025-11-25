@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import '../services/session_guard_service.dart';
 
 class ConflictAlertWidget extends StatefulWidget {
+  const ConflictAlertWidget({super.key});
+
   @override
   _ConflictAlertWidgetState createState() => _ConflictAlertWidgetState();
 }
@@ -268,6 +270,8 @@ class _ConflictAlertWidgetState extends State<ConflictAlertWidget>
 
 /// Widget flotante que se puede usar en cualquier pantalla
 class FloatingConflictAlert extends StatelessWidget {
+  const FloatingConflictAlert({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -281,6 +285,8 @@ class FloatingConflictAlert extends StatelessWidget {
 
 /// Widget para mostrar en AppBar
 class AppBarConflictIndicator extends StatelessWidget {
+  const AppBarConflictIndicator({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Consumer<SessionGuardService>(

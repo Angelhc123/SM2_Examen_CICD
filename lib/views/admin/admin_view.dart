@@ -12,6 +12,8 @@ import 'historial_view.dart';
 import 'sync_config_view.dart';
 
 class AdminView extends StatefulWidget {
+  const AdminView({super.key});
+
   @override
   _AdminViewState createState() => _AdminViewState();
 }
@@ -127,6 +129,8 @@ class _AdminViewState extends State<AdminView> {
 }
 
 class AdminDashboard extends StatefulWidget {
+  const AdminDashboard({super.key});
+
   @override
   _AdminDashboardState createState() => _AdminDashboardState();
 }

@@ -4,6 +4,8 @@ import '../../services/sync_service.dart';
 import '../../widgets/custom_button.dart';
 
 class SyncConfigView extends StatefulWidget {
+  const SyncConfigView({super.key});
+
   @override
   _SyncConfigViewState createState() => _SyncConfigViewState();
 }

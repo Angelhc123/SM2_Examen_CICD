@@ -8,10 +8,10 @@ class ConflictResolutionView extends StatefulWidget {
   final Function(List<ConflictData>) onConflictsResolved;
 
   const ConflictResolutionView({
-    Key? key,
+    super.key,
     required this.conflicts,
     required this.onConflictsResolved,
-  }) : super(key: key);
+  });
 
   @override
   State<ConflictResolutionView> createState() => _ConflictResolutionViewState();

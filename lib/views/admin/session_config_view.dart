@@ -5,6 +5,8 @@ import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 
 class SessionConfigView extends StatefulWidget {
+  const SessionConfigView({super.key});
+
   @override
   _SessionConfigViewState createState() => _SessionConfigViewState();
 }

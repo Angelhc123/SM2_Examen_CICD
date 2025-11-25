@@ -9,11 +9,11 @@ class SessionStatusWidget extends StatefulWidget {
   final String? puntoControl;
 
   const SessionStatusWidget({
-    Key? key,
+    super.key,
     this.guardiaId,
     this.guardiaNombre,
     this.puntoControl,
-  }) : super(key: key);
+  });
 
   @override
   State<SessionStatusWidget> createState() => _SessionStatusWidgetState();
@@ -381,11 +381,11 @@ class ConflictResolutionDialog extends StatelessWidget {
   final VoidCallback onCancel;
 
   const ConflictResolutionDialog({
-    Key? key,
+    super.key,
     required this.conflictData,
     required this.onResolve,
     required this.onCancel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

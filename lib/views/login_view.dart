@@ -7,6 +7,8 @@ import 'admin/admin_view.dart';
 import 'user/user_nfc_view.dart';
 
 class LoginView extends StatefulWidget {
+  const LoginView({super.key});
+
   @override
   _LoginViewState createState() => _LoginViewState();
 }

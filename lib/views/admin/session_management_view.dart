@@ -7,10 +7,10 @@ class SessionManagementView extends StatefulWidget {
   final String adminName;
 
   const SessionManagementView({
-    Key? key,
+    super.key,
     required this.adminId,
     required this.adminName,
-  }) : super(key: key);
+  });
 
   @override
   State<SessionManagementView> createState() => _SessionManagementViewState();

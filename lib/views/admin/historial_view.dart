@@ -5,6 +5,8 @@ import '../../models/historial_modificacion_model.dart';
 import '../../widgets/status_widgets.dart';
 
 class HistorialView extends StatefulWidget {
+  const HistorialView({super.key});
+
   @override
   _HistorialViewState createState() => _HistorialViewState();
 }

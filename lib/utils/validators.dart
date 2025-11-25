@@ -3,6 +3,7 @@
 /// 
 /// Este archivo contiene 5 funciones de validación que serán probadas
 /// mediante pruebas unitarias automatizadas en GitHub Actions.
+library;
 
 class Validators {
   /// Función 1: Validar Email

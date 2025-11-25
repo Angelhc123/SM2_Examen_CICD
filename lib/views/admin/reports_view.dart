@@ -4,6 +4,8 @@ import '../../viewmodels/reports_viewmodel.dart';
 import '../../widgets/status_widgets.dart';
 
 class ReportsView extends StatefulWidget {
+  const ReportsView({super.key});
+
   @override
   _ReportsViewState createState() => _ReportsViewState();
 }
@@ -247,7 +249,7 @@ class _ReportsViewState extends State<ReportsView>
                     ),
                   ),
                 )
-                .toList(),
+                ,
           ],
         ),
       ),
@@ -268,7 +270,7 @@ class _ReportsViewState extends State<ReportsView>
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 12),
-            Container(
+            SizedBox(
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,

@@ -9,10 +9,10 @@ class PresenciaDashboardView extends StatefulWidget {
   final String guardiaNombre;
 
   const PresenciaDashboardView({
-    Key? key,
+    super.key,
     required this.guardiaId,
     required this.guardiaNombre,
-  }) : super(key: key);
+  });
 
   @override
   State<PresenciaDashboardView> createState() => _PresenciaDashboardViewState();

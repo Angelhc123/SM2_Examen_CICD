@@ -76,9 +76,6 @@ class NfcViewModel extends ChangeNotifier {
     _scannedAlumno = null;
 
     try {
-      print('🚀 Iniciando escaneo NFC continuo...');
-      print('👮 Guardia configurado: $_guardiaNombre (ID: $_guardiaId)');
-
       // Verificar NFC disponible
       bool available = await _nfcService.isNfcAvailable();
       if (!available) {
@@ -91,7 +88,6 @@ class NfcViewModel extends ChangeNotifier {
       await _startContinuousScanning();
     } catch (e) {
       String errorMsg = e.toString().replaceAll('Exception: ', '');
-      print('❌ Error en escaneo: $errorMsg');
       _setError('❌ $errorMsg');
       _setScanning(false);
     }
@@ -101,8 +97,6 @@ class NfcViewModel extends ChangeNotifier {
   Future<void> _startContinuousScanning() async {
     while (_isScanning) {
       try {
-        print('📡 Esperando próxima pulsera...');
-
         // Leer pulsera con timeout corto
         String codigoUniversitario = await _nfcService.readNfcWithResult();
 
@@ -124,7 +118,6 @@ class NfcViewModel extends ChangeNotifier {
       } catch (e) {
         if (_isScanning) {
           // Si hay error, seguir intentando
-          print('⚠️ Error en lectura continua: $e');
           await Future.delayed(Duration(milliseconds: 500));
         }
       }
@@ -139,17 +132,12 @@ class NfcViewModel extends ChangeNotifier {
     _clearMessages();
 
     try {
-      print('🔄 Iniciando lectura NFC inmediata...');
-
       // Intentar lectura con resultado visible
       String codigoUniversitario = await _nfcService.readNfcWithResult();
-
-      print('✅ Código leído: $codigoUniversitario');
 
       // Procesar la detección
       await _processingleDetection(codigoUniversitario);
     } catch (e) {
-      print('❌ Error en lectura inmediata: $e');
       _setError(
         'Error al leer NFC: ${e.toString().replaceAll('Exception: ', '')}',
       );
@@ -373,7 +361,6 @@ class NfcViewModel extends ChangeNotifier {
       _debugLogs.removeRange(maxLogs, _debugLogs.length);
     }
 
-    print(logMessage); // También imprimir en consola
     notifyListeners();
   }
 
@@ -473,7 +460,7 @@ class NfcViewModel extends ChangeNotifier {
         timestampDecision: decisionManual?.timestamp,
         // US029 - Ubicación detallada
         descripcionUbicacion:
-            'Acceso ${tipoAcceso} - Punto: ${_puntoControl ?? "Principal"} - Guardia: ${_guardiaNombre}',
+            'Acceso $tipoAcceso - Punto: ${_puntoControl ?? "Principal"} - Guardia: $_guardiaNombre',
       );
 
       addLog(

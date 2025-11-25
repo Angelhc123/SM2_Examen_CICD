@@ -12,6 +12,8 @@ import '../student_verification_view.dart';
 import '../admin/presencia_dashboard_view.dart';
 
 class UserNfcView extends StatefulWidget {
+  const UserNfcView({super.key});
+
   @override
   _UserNfcViewState createState() => _UserNfcViewState();
 }
@@ -64,7 +66,6 @@ class _UserNfcViewState extends State<UserNfcView> with WidgetsBindingObserver {
       nfcViewModel.stopNfcScan();
     } else if (state == AppLifecycleState.resumed) {
       // Cuando la app se reactiva, intentar leer NFC inmediatamente
-      print('📱 App reactivada, intentando leer NFC...');
       Future.delayed(Duration(milliseconds: 500), () {
         nfcViewModel.readNfcImmediately();
       });
@@ -440,8 +441,9 @@ class _UserNfcViewState extends State<UserNfcView> with WidgetsBindingObserver {
 
   // Métodos para las nuevas funcionalidades US022-US030
   void _mostrarVerificacionManual(NfcViewModel nfcViewModel) async {
-    if (nfcViewModel.scannedAlumno == null || nfcViewModel.guardiaId == null)
+    if (nfcViewModel.scannedAlumno == null || nfcViewModel.guardiaId == null) {
       return;
+    }
 
     // Determinar tipo de acceso primero
     final tipoAcceso = await nfcViewModel.determinarTipoAccesoInteligente(

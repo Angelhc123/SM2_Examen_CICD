@@ -7,6 +7,8 @@ import '../../widgets/custom_text_field.dart';
 import '../../widgets/status_widgets.dart';
 
 class UserManagementView extends StatefulWidget {
+  const UserManagementView({super.key});
+
   @override
   _UserManagementViewState createState() => _UserManagementViewState();
 }
@@ -279,6 +281,8 @@ class _UserManagementViewState extends State<UserManagementView> {
 }
 
 class CreateUserDialog extends StatefulWidget {
+  const CreateUserDialog({super.key});
+
   @override
   _CreateUserDialogState createState() => _CreateUserDialogState();
 }
@@ -341,7 +345,7 @@ class _CreateUserDialogState extends State<CreateUserDialog> {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text('Crear Nuevo Usuario'),
-      content: Container(
+      content: SizedBox(
         width: double.maxFinite,
         child: Form(
           key: _formKey,
@@ -488,8 +492,7 @@ class _CreateUserDialogState extends State<CreateUserDialog> {
 class ChangePasswordDialog extends StatefulWidget {
   final UsuarioModel usuario;
 
-  const ChangePasswordDialog({Key? key, required this.usuario})
-    : super(key: key);
+  const ChangePasswordDialog({super.key, required this.usuario});
 
   @override
   _ChangePasswordDialogState createState() => _ChangePasswordDialogState();
