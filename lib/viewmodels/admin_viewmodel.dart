@@ -176,32 +176,6 @@ class AdminViewModel extends ChangeNotifier {
     ];
   }
 
-  // Registrar cambio en historial (método para implementación futura)
-  Future<void> _registrarCambio({
-    required String entidadId,
-    required String tipoEntidad,
-    required String accion,
-    required Map<String, dynamic> cambios,
-    String? descripcion,
-  }) async {
-    // En implementación real, esto haría un POST al servidor
-    // Por ahora, solo añadimos al historial local
-    final nuevoRegistro = HistorialModificacionModel(
-      id: DateTime.now().millisecondsSinceEpoch.toString(),
-      entidadId: entidadId,
-      tipoEntidad: tipoEntidad,
-      accion: accion,
-      adminId: 'current_admin', // Vendría del usuario actual
-      adminNombre: 'Admin Actual',
-      cambiosRealizados: cambios,
-      descripcion: descripcion,
-      fechaModificacion: DateTime.now(),
-    );
-
-    _historial.insert(0, nuevoRegistro); // Añadir al inicio
-    notifyListeners();
-  }
-
   // Limpiar mensajes
   void clearMessages() {
     _clearMessages();
