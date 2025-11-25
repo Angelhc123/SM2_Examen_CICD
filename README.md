@@ -101,7 +101,7 @@ class Validators {
 
 ### Pruebas Unitarias: `test/validators_test.dart`
 
-Se crearon **20 pruebas unitarias** distribuidas en **5 grupos** (4 pruebas por función):
+Se crearon **32 pruebas unitarias** distribuidas en **5 grupos** :
 
 ```dart
 void main() {
@@ -133,10 +133,10 @@ void main() {
 flutter test test/validators_test.dart
 ```
 
-**Resultado:** ✅ **20/20 tests pasaron exitosamente**
+**Resultado:** ✅ **32/32 tests pasaron exitosamente**
 
 ```
-00:10 +20: All tests passed!
+00:10 +32: All tests passed!
 ```
 
 ---
@@ -242,7 +242,7 @@ jobs:
 ![Run Unit Tests](assets/evidence-unit-tests.png)
 
 **Resultado esperado:**
-- ✅ 20/20 tests de `validators_test.dart` pasaron
+- ✅ 32/32 tests de `validators_test.dart` pasaron
 - ✅ Tests adicionales del proyecto también pasaron
 - ✅ Cobertura de código generada
 
@@ -370,7 +370,7 @@ flutter build apk --debug
 - [x] Función 3: Calculadora Descuento ✅
 - [x] Función 4: Rango Válido ✅
 - [x] Función 5: Texto a Mayúsculas ✅
-- [x] 20 pruebas unitarias implementadas
+- [x] 32 pruebas unitarias implementadas
 - [x] Tests ejecutados localmente con éxito
 
 #### PARTE 2: Configuración del Repositorio
@@ -405,7 +405,7 @@ flutter build apk --debug
 
 1. ✅ **Implementación exitosa de CI/CD:** Se configuró un pipeline completo de integración y entrega continua que se ejecuta automáticamente en cada cambio de código.
 
-2. ✅ **Automatización de pruebas:** Las 5 funciones de validación están completamente probadas con 20 tests unitarios que se ejecutan automáticamente.
+2. ✅ **Automatización de pruebas:** Las 5 funciones de validación están completamente probadas con 32 tests unitarios que se ejecutan automáticamente.
 
 3. ✅ **Calidad de código garantizada:** El linting automático asegura que el código cumple con los estándares de Dart/Flutter.
 
